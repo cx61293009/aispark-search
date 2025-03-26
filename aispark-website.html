@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISpark - 释放你的灵感火花</title>
+    <meta name="description" content="AISpark - 释放你的灵感火花，提供游戏、阅读、音乐、影视资源搜索">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS6KGH81LN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LS6KGH81LN');
+    </script>
+
+    <style>
+        /* 之前的自定义样式保持不变 */
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --green: #34C759;
+            --red: #FF3B30;
+            --orange: #FF9500;
+            --yellow: #FFCC00;
+            --purple: #AF52DE;
+            --pink: #FF2D55;
+            --gray: #8E8E93;
+            --gray2: #AEAEB2;
+            --gray3: #C7C7CC;
+            --gray4: #D1D1D6;
+            --gray5: #E5E5EA;
+            --gray6: #F2F2F7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--gray6);
+        }
+
+        /* 其余的样式代码保持不变 */
+        .logo-text {
+            background: linear-gradient(90deg, #007AFF, #5AC8FA, #34C759, #FF9500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        /* 其他样式... */
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部导航栏 -->
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#007AFF" fill-opacity="0.2"/>
+                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#007AFF"/>
+                        <path d="M12 6V2M12 22V18M6 12H2M22 12H18M7.05 7.05L4.22 4.22M19.78 19.78L16.95 16.95M7.05 16.95L4.22 19.78M19.78 4.22L16.95 7.05" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h1 class="text-2xl logo-text">AISpark</h1>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="zh-btn" class="lang-switch active px-3 py-1 rounded-md text-sm">中文</button>
+                    <button id="en-btn" class="lang-switch px-3 py-1 rounded-md text-sm">English</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="flex-grow flex flex-col items-center justify-center px-4 pb-16">
+            <!-- 页面其余内容保持不变 -->
+            <div class="text-center mb-8 mt-16 md:mt-0">
+                <div class="flex justify-center items-center mb-4">
+                    <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#007AFF" fill-opacity="0.2"/>
+                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#007AFF"/>
+                        <path d="M12 6V2M12 22V18M6 12H2M22 12H18M7.05 7.05L4.22 4.22M19.78 19.78L16.95 16.95M7.05 16.95L4.22 19.78M19.78 4.22L16.95 7.05" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 logo-text">AISpark</h1>
+                <p class="text-lg text-gray-600 lang-zh">释放你的灵感火花</p>
+                <p class="text-lg text-gray-600 lang-en hidden">Ignite Your Inspiration</p>
+            </div>
+
+            <!-- 搜索框 -->
+            <div class="w-full max-w-2xl mb-12">
+                <div class="search-box flex items-center bg-white rounded-full overflow-hidden p-1">
+                    <input type="text" class="lang-zh flex-grow px-4 py-3 outline-none" placeholder="搜索你感兴趣的内容...">
+                    <input type="text" class="lang-en hidden flex-grow px-4 py-3 outline-none" placeholder="Search what interests you...">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 四个区域 - 更紧凑的小格子布局 -->
+            <div class="section-container w-full max-w-4xl flex justify-center space-x-4 mb-8">
+                <!-- 游戏区 -->
+                <div class="section-card game-section w-20 h-20 md:w-28 md:h-28 rounded-xl overflow-hidden bg-white flex flex-col items-center justify-center text-center p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-red-500 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                    </svg>
+                    <span class="text-xs md:text-sm font-medium lang-zh">游戏区</span>
+                    <span class="text-xs md:text-sm font-medium lang-en hidden">Gaming</span>
+                </div>
+
+                <!-- 其余区域代码保持不变 -->
+                <!-- 阅读区、音乐区、影视区 -->
+            </div>
+
+            <!-- 近日新闻部分 -->
+            <div class="w-full max-w-3xl bg-white rounded-xl p-6 shadow-sm mb-8">
+                <h2 class="text-xl font-bold mb-4 lang-zh">近日新闻</h2>
+                <h2 class="text-xl font-bold mb-4 lang-en hidden">Recent News</h2>
+                
+                <!-- 新闻条目保持不变 -->
+            </div>
+
+            <!-- 热门内容分区 -->
+            <div class="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 热门游戏和热门音乐区域保持不变 -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 语言切换逻辑
+        const zhBtn = document.getElementById('zh-btn');
+        const enBtn = document.getElementById('en-btn');
+        const zhElements = document.querySelectorAll('.lang-zh');
+        const enElements = document.querySelectorAll('.lang-en');
+
+        zhBtn.addEventListener('click', () => {
+            zhBtn.classList.add('active');
+            enBtn.classList.remove('active');
+            zhElements.forEach(el => el.classList.remove('hidden'));
+            enElements.forEach(el => el.classList.add('hidden'));
+        });
+
+        enBtn.addEventListener('click', () => {
+            enBtn.classList.add('active');
+            zhBtn.classList.remove('active');
+            enElements.forEach(el => el.classList.remove('hidden'));
+            zhElements.forEach(el => el.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
